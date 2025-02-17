@@ -1,0 +1,17 @@
+version: '3'
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis_cache
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    environment:
+      - IP_GEOLOCATION_API_KEY=eb8eea97b2214feeaea7a474c2df8967
+      - WHOIS_API_KEY=1yqEmpFuJAcqsRuvERxqabnzVJf7qEr1
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lookup Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f8f9fa; }
+        .container { margin-top: 50px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        table { margin: 20px auto; border-collapse: collapse; width: 80%; background-color: white; border-radius: 5px; }
+        th, td { border: 1px solid black; padding: 15px; text-align: left; font-size: 18px; }
+        th { background-color: #007bff; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        pre { white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Lookup Result</h2>
+        <table>
+            <tr><th>IP Address</th><td>{{ data.ip }}</td></tr>
+            <tr><th>Country</th><td>{{ data.country_name }}</td></tr>
+            <tr><th>ISP</th><td>{{ data.isp }}</td></tr>
+            <tr><th>Continent</th><td>{{ data.continent_name }}</td></tr>
+            <tr><th>Cached</th><td>{{ data.cached }}</td></tr>
+            <tr><th>Whois</th><td><pre>{{ data.whois }}</pre></td></tr>
+        </table>
+    </div>
+</body>
+</html>
