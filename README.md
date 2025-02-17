@@ -12,5 +12,12 @@ This has been created as part of Learning Docker by elsonpulikkan
 
 
 ---
+How to IP GeoLocation :
+
+![image](https://github.com/user-attachments/assets/344429c7-1464-4de2-b7c4-294604cf30a7)
+
+How to Whois :
+
+![image](https://github.com/user-attachments/assets/18ad39d9-be00-4c04-bd81-f867680faa2c)
 
 # ipgeo_whois_tool
