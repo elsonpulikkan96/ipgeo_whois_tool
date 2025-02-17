@@ -9,20 +9,27 @@
         th, td { border: 1px solid black; padding: 15px; text-align: left; font-size: 18px; }
         th { background-color: #007bff; color: white; }
         tr:nth-child(even) { background-color: #f2f2f2; }
-        pre { white-space: pre-wrap; word-wrap: break-word; }
+        pre { white-space: pre-wrap; word-wrap: break-word; text-align: left; }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Lookup Result</h2>
         <table>
-            <tr><th>IP Address</th><td>{{ data.ip }}</td></tr>
-            <tr><th>Country</th><td>{{ data.country_name }}</td></tr>
-            <tr><th>ISP</th><td>{{ data.isp }}</td></tr>
-            <tr><th>Continent</th><td>{{ data.continent_name }}</td></tr>
-            <tr><th>Cached</th><td>{{ data.cached }}</td></tr>
-            <tr><th>Whois</th><td><pre>{{ data.whois }}</pre></td></tr>
+            <tr><th>Query</th><td>{{ data.query }}</td></tr>
+            {% if data.lookup_type == "geolocation" %}
+                <tr><th>Country</th><td>{{ data.country_name }}</td></tr>
+                <tr><th>ISP</th><td>{{ data.isp }}</td></tr>
+                <tr><th>Continent</th><td>{{ data.continent_name }}</td></tr>
+                <tr><th>Cached</th><td>{{ data.cached }}</td></tr>
+            {% elif data.lookup_type == "whois" %}
+                <tr><th>Domain Name</th><td>{{ data.whois.domain_name }}</td></tr>
+                <tr><th>Registrar</th><td>{{ data.whois.registrar }}</td></tr>
+                <tr><th>Expiry Date</th><td>{{ data.whois.expiry_date }}</td></tr>
+                <tr><th>Whois Data</th><td><pre>{{ data.whois.raw }}</pre></td></tr>
+            {% endif %}
         </table>
     </div>
 </body>
 </html>
+
